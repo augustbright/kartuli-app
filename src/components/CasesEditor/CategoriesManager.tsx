@@ -33,13 +33,17 @@ export const CategoriesManager = <Space extends TCasesSpace>({ value, casesValue
                     id={card[0]}
                     moveCard={moveCard}
                     onDrop={() => {
-                        onValueChange(order)
+                        onValueChange(order);
                     }}
                 >{index + 1}: {card[0]}</CategoryCard>
             );
         },
         [onValueChange, order],
     );
+
+    if (!order.length) {
+        return null;
+    }
 
     return <div className="flex flex-col gap-2 border p-2">
         {order.map((card, i) => renderCard(card, i))}

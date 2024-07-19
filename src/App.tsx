@@ -9,59 +9,12 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {
     const [cases, setCases] = useState<TCasesValue<typeof VERB_CASES>>({
-        "one": [],
-        "qwer1": [
-            {
-                "case1": "bar",
-                "cheese": "two",
-                "number": "singular",
-                "tense": "optative",
-                "person": "second",
-            }
-        ],
-        "two": [
-            {
-                "person": "second"
-            }
-        ],
-        "three": [
-            {
-                "person": "first"
-            },
-            {
-                "person": "second",
-                "number": "singular"
-            }
-        ],
-        "four": [
-            {
-                "person": "third",
-                "number": "singular",
-                "tense": "future"
-            }
-        ],
-        "qwer": [
-            {
-                "person": "second",
-                "number": "singular",
-                "tense": "optative"
-            },
-            {
-                "person": "second",
-                "number": "singular",
-                "tense": "optative",
-                "case1": "foo",
-                "cheese": "two"
-            }
-        ],
+        // Говорю: [{
+        //     person: 'first'
+        // }]
     });
     return <DndProvider backend={HTML5Backend}>
-        <div className="flex w-dvw gap-4 p-6">
-            <pre>{JSON.stringify(cases, null, 2)}</pre>
-            <div className="grow">
-                <CasesEditor space={VERB_CASES} value={cases} onValueChange={setCases} />
-            </div>
-        </div>
+        <CasesEditor space={VERB_CASES} value={cases} onValueChange={setCases} />
     </DndProvider>;
     return <FireCMSCloudApp
         projectId={"kartuli-app-0uun2"}

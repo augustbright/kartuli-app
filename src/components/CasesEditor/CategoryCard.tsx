@@ -90,10 +90,10 @@ export const CategoryCard = ({ id, children, index, moveCard, onDrop }: {
         }),
     });
 
-    drag(drop(ref))
+    drag(drop(ref));
 
     return (
-        <Card ref={ref} className={`${isDragging ? 'opacity-0' : ''} cursor-move text-center border border-gray-500 border-dashed p-2 bg-slate-300 shadow-sm`} data-handler-id={handlerId} >
+        <Card ref={ref} className={`${isDragging ? 'opacity-0' : ''} cursor-move text-center border border-gray-500 border-dashed p-2 bg-blue-400 shadow-sm`} data-handler-id={handlerId} >
             {children}
         </Card>
     );
